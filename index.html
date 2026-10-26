@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vizito Kosovën</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <span class="logo">🇽🇰 Vizito Kosovën</span>
+      <button id="themeToggle" class="icon-btn" title="Ndrysho temën">🌙</button>
+    </nav>
+    <div class="hero-text">
+      <h1>Zbulo zemrën e Ballkanit</h1>
+      <p>Male, kala, ujëvara dhe mikpritje e pafund. Planifiko udhëtimin tënd në Kosovë.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Kërko destinacion ose qytet…" />
+      <div id="filters" class="filters"></div>
+    </section>
+
+    <div class="layout">
+      <section>
+        <h2 class="section-title">Destinacionet <span id="count" class="muted"></span></h2>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <aside class="planner">
+        <h2>🧳 Plani im i udhëtimit</h2>
+        <p class="muted small">Ruhet automatikisht në shfletues (localStorage).</p>
+        <ol id="tripList" class="trip-list"></ol>
+        <p id="tripEmpty" class="muted">Shto destinacione me butonin „+ Plan”.</p>
+        <div class="trip-actions">
+          <button id="clearTrip" class="btn ghost">Fshi planin</button>
+        </div>
+
+        <h3>✍️ Shënime</h3>
+        <textarea id="notes" rows="4" placeholder="p.sh. Rezervo hotel në Pejë…"></textarea>
+      </aside>
+    </div>
+  </main>
+
+  <dialog id="modal">
+    <div id="modalBody"></div>
+  </dialog>
+
+  <footer class="footer">Bërë me ❤️ për Kosovën · Të dhënat ruhen vetëm në pajisjen tënde</footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
