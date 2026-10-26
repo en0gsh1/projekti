@@ -4,7 +4,15 @@ const fs = require("fs");
 const path = require("path");
 
 const PORT = process.env.PORT || 5173;
-const TYPES = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".md": "text/plain" };
+const TYPES = {
+  ".html": "text/html",
+  ".css": "text/css",
+  ".js": "text/javascript",
+  ".json": "application/json",
+  ".webmanifest": "application/manifest+json",
+  ".svg": "image/svg+xml",
+  ".md": "text/plain",
+};
 
 http
   .createServer((req, res) => {
@@ -13,7 +21,10 @@ http
     if (!file.startsWith(__dirname)) return res.writeHead(403).end();
     fs.readFile(file, (err, data) => {
       if (err) return res.writeHead(404).end("Not found");
-      res.writeHead(200, { "Content-Type": (TYPES[path.extname(file)] || "application/octet-stream") + "; charset=utf-8" });
+      res.writeHead(200, {
+        "Content-Type": (TYPES[path.extname(file)] || "application/octet-stream") + "; charset=utf-8",
+        "Cache-Control": "no-cache",
+      });
       res.end(data);
     });
   })

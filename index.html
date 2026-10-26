@@ -3,55 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Udhërrëfyes dhe planifikues udhëtimi për turizmin në Kosovë." />
+  <meta name="theme-color" content="#244aa5" />
   <title>Vizito Kosovën</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <nav class="nav">
-      <span class="logo">🇽🇰 Vizito Kosovën</span>
-      <button id="themeToggle" class="icon-btn" title="Ndrysho temën">🌙</button>
-    </nav>
-    <div class="hero-text">
-      <h1>Zbulo zemrën e Ballkanit</h1>
-      <p>Male, kala, ujëvara dhe mikpritje e pafund. Planifiko udhëtimin tënd në Kosovë.</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#/" class="logo"><span aria-hidden="true">🇽🇰</span> <span class="logo-text">Vizito Kosovën</span></a>
+      <nav id="navLinks" class="nav-links"></nav>
+      <div class="topbar-btns">
+        <button id="langToggle" class="icon-btn lang-btn">EN</button>
+        <button id="themeToggle" class="icon-btn">🌙</button>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="toolbar">
-      <input id="search" type="search" placeholder="Kërko destinacion ose qytet…" />
-      <div id="filters" class="filters"></div>
-    </section>
+  <main id="app"></main>
 
-    <div class="layout">
-      <section>
-        <h2 class="section-title">Destinacionet <span id="count" class="muted"></span></h2>
-        <div id="grid" class="grid"></div>
-      </section>
-
-      <aside class="planner">
-        <h2>🧳 Plani im i udhëtimit</h2>
-        <p class="muted small">Ruhet automatikisht në shfletues (localStorage).</p>
-        <ol id="tripList" class="trip-list"></ol>
-        <p id="tripEmpty" class="muted">Shto destinacione me butonin „+ Plan”.</p>
-        <div class="trip-actions">
-          <button id="clearTrip" class="btn ghost">Fshi planin</button>
-        </div>
-
-        <h3>✍️ Shënime</h3>
-        <textarea id="notes" rows="4" placeholder="p.sh. Rezervo hotel në Pejë…"></textarea>
-      </aside>
-    </div>
-  </main>
-
-  <dialog id="modal">
-    <div id="modalBody"></div>
-  </dialog>
-
-  <footer class="footer">Bërë me ❤️ për Kosovën · Të dhënat ruhen vetëm në pajisjen tënde</footer>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <footer id="footer" class="footer"></footer>
+  <noscript>Ky aplikacion kërkon JavaScript.</noscript>
 </body>
 </html>

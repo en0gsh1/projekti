@@ -1,0 +1,10 @@
+{
+  "name": "Vizito Kosovën",
+  "short_name": "Kosova",
+  "description": "Udhërrëfyes dhe planifikues udhëtimi për Kosovën",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#244aa5",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
